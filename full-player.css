@@ -1,0 +1,99 @@
+/***************************************
+
+	Style webkit video-player – full version
+	by @karlwestin
+	
+	Recommended usage in combination w/ mediaControlsChromium.css
+	Add class .full to video element 
+	
+***************************************/
+
+video.full::-webkit-media-controls-panel {
+	-webkit-appearance: none; /* necessary for safari to pick things up */
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 0px 13px 0px 25px; 	
+	border-radius: 5px;
+	width: 410px;
+	height: 55px;
+	left: 50%;
+	margin-left: -224px; /* ey idiot don't forget to count the padding */
+	bottom: 20px;
+}
+
+/* 
+	setting defaults to make webkit-box work
+	Chrome uses position: absolute as default, so we need to reset them.
+*/
+
+video.full::-webkit-media-controls-play-button,
+video.full::-webkit-media-controls-timeline-container,
+video.full::-webkit-media-controls-current-time-display,
+video.full::-webkit-media-controls-time-remaining-display,
+video.full::-webkit-media-controls-timeline,
+video.full::-webkit-media-controls-mute-button {
+	bottom: auto;
+	display: -webkit-box;
+	position: relative;
+	left: 0;	/* without this, the mute/volume button will hide under the current time */
+}
+
+video.full::-webkit-media-controls-play-button {
+	width: 20px;
+	height: 18px;
+}
+
+video.full::-webkit-media-controls-current-time-display,
+video.full::-webkit-media-controls-time-remaining-display,
+video.full::-webkit-media-controls-status-display {
+	font-size: 11px; 
+	letter-spacing: 0.02em;
+	font-weight: normal;
+	font: -webkit-small-control;
+	text-shadow: 0 1px 1px #333;
+	padding: 0px 5px;
+}
+
+video.full::-webkit-media-controls-timeline {
+	-webkit-appearance: none;
+	-webkit-border-radius: 6px;
+	border: none;
+	height: 10px;
+	box-shadow: 0px 1px 0px #555; 
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.11, rgb(40,40,40)),
+	    color-stop(0.95, rgb(11,11,11))
+	);	
+	
+}
+
+input[type="range"]::-webkit-slider-thumb {
+ 	-webkit-appearance: media-sliderthumb; /* this is needed to make the thumb move along when the video is playing, however it fucks up the styling a little :( */
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.95, rgb(170,170,170)),
+	    color-stop(0.11, rgb(120,120,120))
+	);	
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px #f0f;
+}
+
+video.full::-webkit-media-controls-timeline-container {
+	-webkit-appearance: none;
+	border: none !important;
+	-webkit-box-flex: 1; /* take "the rest of available space" */
+	background: none !important;
+}
+
+video.full::-webkit-media-controls-volume-slider {
+    -webkit-appearance: media-volume-slider;
+}
+
+/* hide the useless button to the left in safari */
+video::-webkit-media-controls-rewind-button {
+	display: none;
+}

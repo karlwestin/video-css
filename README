@@ -1,0 +1,7 @@
+Styling the Webkit Video Player with CSS
+=========
+
+Created by @karlwestin
+
+recommended to be used with mediaControlsChromium.css as a "reset style-sheet".
+The reason for this is that the stylesheet seems to very al lot between different Chrome versions and this will give you a stable ground to work on. 

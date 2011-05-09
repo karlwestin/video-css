@@ -1,0 +1,59 @@
+/***************************************
+
+	Style webkit video-player – simple version
+	by @karlwestin
+	
+	Recommended usage in combination w/ mediaControlsChromium.css
+	Add class .simple to video element 
+	
+***************************************/
+
+
+/* for the "simple" player, with only play/pause-button: */
+
+/* hide the useless button to the left in safari */
+video::-webkit-media-controls-rewind-button {
+	display: none;
+}
+
+video.simple::-webkit-media-controls-timeline-container,
+video.simple::-webkit-media-controls-current-time-display,
+video.simple::-webkit-media-controls-time-remaining-display,
+video.simple::-webkit-media-controls-timeline,
+video.simple::-webkit-media-controls-mute-button,
+video.simple::-webkit-media-controls-fullscreen-button {
+	display: none;
+}
+
+video.simple::-webkit-media-controls-panel {
+	-webkit-appearance: none; /* necessary for safari to pick things up */
+	height: 40px;
+	bottom: 50%;
+	margin-bottom: -30px;
+	width: 40px;
+	padding: 20px;
+	border-radius: 40px;
+	margin-left: -40px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.95, rgba(30,30,30, 0.6)),
+	    color-stop(0.11, rgba(0, 0, 0, 0.6))
+	);			
+	-webkit-box-shadow: 0px 1px 2px #222, 0px -1px 0px #aaa;
+	left: 50%;
+	
+}
+
+video.simple::-webkit-media-controls-play-button {
+	width: 20px;
+	height: 18px;
+	bottom: auto;
+	display: -webkit-box;
+	position: relative;
+	-webkit-box-align: center;
+	-webkit-box-orient: vertical;
+	margin-left: 12px;
+	left: 0;
+}
